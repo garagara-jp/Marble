@@ -1,0 +1,9 @@
+/Backup
+/Library
+/Temp
+/.vs
+/obj
+*.sln
+*.csproj
+/Build
+/Assets/Test
