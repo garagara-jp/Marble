@@ -466,12 +466,12 @@ Prefab:
     - target: {fileID: 224534836436209852, guid: 053b101c5904a5c4498dd0f1e5c716f2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 401
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 224534836436209852, guid: 053b101c5904a5c4498dd0f1e5c716f2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 225.5
+      value: 194
       objectReference: {fileID: 0}
     - target: {fileID: 224534836436209852, guid: 053b101c5904a5c4498dd0f1e5c716f2,
         type: 2}
@@ -1128,6 +1128,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114917643024707830, guid: 58f3665a68777ec439e9a2386b5462b3,
+        type: 2}
+      propertyPath: goalManagers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4821428724178210, guid: 58f3665a68777ec439e9a2386b5462b3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 112.2925

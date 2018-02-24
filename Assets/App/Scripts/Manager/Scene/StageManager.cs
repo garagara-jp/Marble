@@ -11,9 +11,11 @@ public enum Rank { S, A, B, C, D }
 public class StageManager : MonoBehaviour
 {
     private SceneModel model;
+    private SceneChangeManager sceneChange;
 
     [SerializeField]
     private Image fadePanel;
+
 
     [SerializeField]
     private GoalManager[] goalManagers;
@@ -35,6 +37,7 @@ public class StageManager : MonoBehaviour
     private void Awake()
     {
         model = GetComponent<SceneModel>();
+        sceneChange = GetComponent<SceneChangeManager>();
 
         GameManager.Instance.SetCurrentState(GameState.Prepare);
     }
@@ -67,8 +70,8 @@ public class StageManager : MonoBehaviour
         {
             Debug.Log("全てのゴール地点が達成されました");
             GameManager.Instance.SetCurrentState(GameState.Result);
+            return;
         }
-
     }
 
     private void ShowResult()
@@ -94,12 +97,12 @@ public class StageManager : MonoBehaviour
     private Rank GetRank(int clickCount, int desireCount)
     {
         Rank rank;
-        float score = clickCount / desireCount;
+        float score = (float)clickCount / desireCount;
 
-        if (score <= 0.5f) rank = Rank.S;
+        if (score < 0.5f) rank = Rank.S;
         else if (score <= 1) rank = Rank.A;
-        else if (score <= 3) rank = Rank.B;
-        else if (score <= 4) rank = Rank.C;
+        else if (score <= 2) rank = Rank.B;
+        else if (score <= 3) rank = Rank.C;
         else rank = Rank.D;
 
         return rank;

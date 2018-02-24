@@ -8,6 +8,11 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private Image fadePanel;
 
+    private void Awake()
+    {
+        GameManager.Instance.SetCurrentState(GameState.Title);
+    }
+
     private void Start()
     {
         PanelFader.Fade(fadePanel, 1f, true);

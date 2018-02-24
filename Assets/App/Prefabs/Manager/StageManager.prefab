@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4821428724178210}
   - component: {fileID: 114390106012986376}
   - component: {fileID: 114917643024707830}
+  - component: {fileID: 114432121667457238}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -274,9 +275,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3aca5632f3b39499498ddab6200034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStageName: Stage1
-  desireCount: 2
+  currentStageName: Stage3
+  desireCount: 3
   marbleModel: {fileID: 0}
+--- !u!114 &114432121667457238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804663133484412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47246ca8ce32cf49bee5bad782a9267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  sound: {fileID: 0}
+  changeTime: 3
+  fadePanel: {fileID: 0}
 --- !u!114 &114917643024707830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 0}
   goalManagers:
+  - {fileID: 0}
   - {fileID: 0}
   clearUI: {fileID: 0}
   desireCountText: {fileID: 0}

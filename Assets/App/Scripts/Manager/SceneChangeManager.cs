@@ -69,4 +69,12 @@ public class SceneChangeManager : MonoBehaviour
         inChanging = false;
         SceneManager.LoadScene(name);
     }
+
+    /// <summary>
+    /// 現在のシーンをリロードします
+    /// </summary>
+    public void ReloadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
