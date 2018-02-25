@@ -109,8 +109,13 @@ public class SceneViewCamera : MonoBehaviour
         }
 
         // 中ドラッグ、右ドラッグ
-        if (Input.GetMouseButton(2))
+        // ...なんだけどWebGLで書き出してブラウザ上でプレイするには中クリック不味いのでシフト+左ドラッグに変更
+        //if (Input.GetMouseButton(2))
+        if (Input.GetKey(KeyCode.LeftShift)　&& Input.GetMouseButton(0))
+        {
             transform.Translate(-diff * Time.deltaTime * moveSpeed);
+            Debug.Log("移動s");
+        }
         else if (Input.GetMouseButton(1))
             CameraRotate(new Vector2(-diff.y, diff.x) * rotateSpeed);
 
@@ -132,7 +137,7 @@ public class SceneViewCamera : MonoBehaviour
         // 画面の中央の座標を計算
         ray = new Ray(transform.position, transform.forward);
         centerPosition = ray.GetPoint(offset);
-         
+
         // 回転
         transform.RotateAround(centerPosition, transform.right, angle.x);
         transform.RotateAround(centerPosition, Vector3.up, angle.y);

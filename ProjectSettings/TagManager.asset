@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TargetMarble
+  - SavePoint
+  - GoalArea
   layers:
   - Default
   - TransparentFX

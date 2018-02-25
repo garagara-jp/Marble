@@ -21,6 +21,8 @@ public class StageManager : MonoBehaviour
     private GoalManager[] goalManagers;
 
     [SerializeField]
+    private GameObject menuUI;
+    [SerializeField]
     private GameObject clearUI;
     [SerializeField]
     private Text desireCountText;
@@ -57,6 +59,7 @@ public class StageManager : MonoBehaviour
 
     private void StartScene()
     {
+        menuUI.SetActive(false);
         clearUI.SetActive(false);
         PanelFader.Fade(fadePanel, 1f, true);
         GameManager.Instance.SetCurrentState(GameState.Stage);
@@ -91,7 +94,7 @@ public class StageManager : MonoBehaviour
             });
 
         source.PlayOneShot(clip);
-        Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(_ => process.OnNext(0));
+        Observable.Timer(TimeSpan.FromSeconds(0.5f)).Subscribe(_ => process.OnNext(0));
     }
 
     private Rank GetRank(int clickCount, int desireCount)
@@ -99,7 +102,7 @@ public class StageManager : MonoBehaviour
         Rank rank;
         float score = (float)clickCount / desireCount;
 
-        if (score < 0.5f) rank = Rank.S;
+        if (score <= 0.5f) rank = Rank.S;
         else if (score <= 1) rank = Rank.A;
         else if (score <= 2) rank = Rank.B;
         else if (score <= 3) rank = Rank.C;

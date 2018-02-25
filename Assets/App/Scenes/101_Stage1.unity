@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7b621f3d20f81af4785f8576da7910e2, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -352,6 +352,11 @@ Prefab:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114917643024707830, guid: 58f3665a68777ec439e9a2386b5462b3,
+        type: 2}
+      propertyPath: menuUI
+      value: 
+      objectReference: {fileID: 1898828065}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58f3665a68777ec439e9a2386b5462b3, type: 2}
   m_IsPrefabParent: 0
@@ -432,12 +437,12 @@ Prefab:
     - target: {fileID: 224534836436209852, guid: 053b101c5904a5c4498dd0f1e5c716f2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 345
+      value: 431.5
       objectReference: {fileID: 0}
     - target: {fileID: 224534836436209852, guid: 053b101c5904a5c4498dd0f1e5c716f2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 194
+      value: 242.5
       objectReference: {fileID: 0}
     - target: {fileID: 224534836436209852, guid: 053b101c5904a5c4498dd0f1e5c716f2,
         type: 2}
@@ -518,15 +523,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114601904273586970, guid: 053b101c5904a5c4498dd0f1e5c716f2,
-        type: 2}
-      propertyPath: fadePanel
-      value: 
-      objectReference: {fileID: 1124382912}
-    - target: {fileID: 1372490962144578, guid: 053b101c5904a5c4498dd0f1e5c716f2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 053b101c5904a5c4498dd0f1e5c716f2, type: 2}
@@ -615,6 +611,11 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 943785157}
+    - target: {fileID: 114392232346115310, guid: 94d8979ee5866734a8f52ffb10537691,
+        type: 2}
+      propertyPath: maxPower
+      value: 1500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94d8979ee5866734a8f52ffb10537691, type: 2}
   m_IsPrefabParent: 0
@@ -898,6 +899,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc872f1399bdca74b80478a424a50023, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1898828065 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1507537977966856, guid: 053b101c5904a5c4498dd0f1e5c716f2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1124382911}
 --- !u!1001 &1914401853
 Prefab:
   m_ObjectHideFlags: 0

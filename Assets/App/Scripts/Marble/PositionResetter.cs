@@ -9,12 +9,12 @@ using UnityEngine;
 public class PositionResetter : MonoBehaviour
 {
     Rigidbody rb;
-    private Vector3 startPos;
+    private Vector3 resetPos;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        startPos = transform.position;
+        resetPos = transform.position;
     }
 
     private void Update()
@@ -32,9 +32,20 @@ public class PositionResetter : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        // セーブポイントに到達したらポジションを保存する
+        // セーブポイント自体はディアクティブにする
+        if (col.tag == "SavePoint")
+        {
+            resetPos = col.transform.position;
+            col.gameObject.SetActive(false);
+        }
+    }
+
     private void ResetPosition()
     {
-        transform.position = startPos;
+        transform.position = resetPos;
         rb.velocity = Vector3.zero;
     }
 }

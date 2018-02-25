@@ -28,7 +28,7 @@ public class SceneChangeManager : MonoBehaviour
     /// <param name="name">遷移先のシーン名</param>
     public void ChangeScene(string name)
     {
-        Change(name, sound);
+        Change(name, changeTime, sound);
     }
 
     /// <summary>
@@ -36,12 +36,22 @@ public class SceneChangeManager : MonoBehaviour
     /// </summary>
     /// <param name="name">遷移先のシーン名</param>
     /// <param name="sound">遷移する際に鳴らす音声</param>
-    public void ChangeScene(string name, AudioClip sound)
+    public void ChangeScene(string name, AudioClip _sound)
     {
-        Change(name, sound);
+        Change(name, changeTime, _sound);
     }
 
-    private void Change(string name, AudioClip sound)
+    /// <summary>
+    /// シーンを遷移します
+    /// </summary>
+    /// <param name="name">遷移先のシーン名</param>
+    /// <param name="time">遷移するまでの時間</param>
+    public void ChangeScene(string name, float time)
+    {
+        Change(name, time, sound);
+    }
+
+    private void Change(string name, float time, AudioClip sound)
     {
         if (!inChanging)
         {
@@ -52,8 +62,8 @@ public class SceneChangeManager : MonoBehaviour
             }
             inChanging = true;
             audioSource.PlayOneShot(sound);
-            coroutine = StartCoroutine(CoChange(name, changeTime));
-            PanelFader.Fade(fadePanel, changeTime, false);
+            coroutine = StartCoroutine(CoChange(name, time));
+            PanelFader.Fade(fadePanel, time, false);
             Debug.Log($"シーン遷移開始します：{name}");
         }
         else Debug.Log("シーン遷移処理中です");
@@ -75,6 +85,6 @@ public class SceneChangeManager : MonoBehaviour
     /// </summary>
     public void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Change(SceneManager.GetActiveScene().name, 1, sound);
     }
 }
