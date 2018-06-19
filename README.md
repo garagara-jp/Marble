@@ -2,10 +2,10 @@
 
 <img src="https://i.gyazo.com/09151ca801d3c5349e0a648ee96f9af9.png" width="600px">
 
-unityroom主催『1週間ゲームジャム』の作品です。「お題：当てる」というテーマで作成した、ビー玉弾きのゲームです。
+unityroom主催『[1週間ゲームジャム](https://unityroom.com/unity1weeks)』の作品です。「お題：当てる」というテーマで作成した、ビー玉弾きのゲームです。
 
 ↓ゲームはこちらからプレイできます。  
-https://unityroom.com/unity1weeks
+https://unityroom.com/games/marble-flicker
 
 
 
